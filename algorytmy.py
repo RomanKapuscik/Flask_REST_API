@@ -27,7 +27,7 @@ def find_name_json(name: str) -> str:
             break
     end = time.time()
     total = end - start
-    return 'Wyszukiwanie JSON' + str(total)
+    return 'Wyszukiwanie JSON czas: ' + str(total)
 
 
 # print(find_name_json('Julian'))
@@ -51,7 +51,7 @@ def find_name_list(name: str) -> str:
             break
     end = time.time()
     total = end - start
-    return 'Wyszukiwanie list' + str(total)
+    return 'Wyszukiwanie list czas: ' + str(total)
 
 
 #   zadanie 4
@@ -70,7 +70,7 @@ def find_name_set(name: str) -> str:
             break
     end = time.time()
     total = end - start
-    return 'Wyszukiwanie set' + str(total)
+    return 'Wyszukiwanie set czas: ' + str(total)
 
 
 def buble_sort(data):

@@ -1,22 +1,12 @@
 import json
 import time
+import numpy as np
 
 with open('imiona.json') as f:
     data = json.load(f)
 
 
 #   zadanie 2
-# start = time.time()
-# lines = 0
-# for x in data['data']:
-#     lines += 1
-#     if x[11] == 'Julian'.upper():
-#         print(x, f'\nLiczba lini kodu: {lines}')
-#         break
-# end = time.time()
-# total = end - start
-# print('Wyszukiwanie JSON', total)
-
 def find_name_json(name: str) -> str:
     start = time.time()
     lines = 0
@@ -81,6 +71,19 @@ def buble_sort(data):
                 data[x], data[x + 1] = data[x + 1], data[x]
         n -= 1
     return data
+
+
+def generatot_liczb_losowych(n: int):
+    return np.random.rand(n, 1)
+
+
+number_of_random = 100
+liczby_losowe = generatot_liczb_losowych(number_of_random)
+
+# print(type(list(buble_sort(liczby_losowe))))
+
+
+
 
 # start = time.time()
 # print(buble_sort(hispanic_names))

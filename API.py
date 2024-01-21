@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from algorytmy import find_name_json, find_name_list, find_name_set, buble_sort, liczby_losowe
+from algorytmy_21012024 import find_friends_json, looking_for_things_with_friends
 
 app = Flask(__name__)
 
@@ -28,6 +29,24 @@ def find_set():
 def buble_sort_100():
     return list(buble_sort(liczby_losowe))
 
+
+@app.route('/find_friends', methods=['GET'])
+def find_friends():
+    name1 = request.args.get('name1')
+    name2 = request.args.get('name2')
+
+    result = find_friends_json(name1, name2)
+
+    return jsonify({'result': result})
+
+@app.route('/find_things', methods=['GET'])
+def find_things():
+    name = request.args.get('name')
+    items = request.args.get('items')
+
+    result = looking_for_things_with_friends(name, items)
+
+    return jsonify({'result': result})
 # @app.route("/dane", methods=['POST'])
 # def loadJson():
 #     content_type = request.headers.get('Content-Type')

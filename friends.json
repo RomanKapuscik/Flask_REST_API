@@ -1,0 +1,16 @@
+{
+  "who_know_who": {
+    "Kamil": ["Magda", "Piotr", "Daniel"],
+    "Magda": ["Kamil", "Ewa", "Liliana"],
+    "Ewa": ["Magda", "Liliana", "Daniel"],
+    "Piotr": ["Kamil"],
+    "Nikodem": ["Mikolaj"],
+    "Mikolaj": ["Nikodem", "Daniel"],
+    "Liliana": ["Magda", "Ewa"],
+    "Daniel": ["Kamil", "Ewa", "Mikolaj"]
+  },
+  "who_has_what": {
+    "kamera": ["Magda", "Piotr", "Mikolaj", "Liliana"],
+    "statyw": ["Piotr"]
+  }
+}

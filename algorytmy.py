@@ -64,6 +64,7 @@ def find_name_set(name: str) -> str:
 
 
 def buble_sort(data):
+    # data = list(nums)
     n = len(data)
     while n > 0:
         for x in range(n - 1):
@@ -83,7 +84,8 @@ liczby_losowe = generatot_liczb_losowych(number_of_random)
 # print(type(list(buble_sort(liczby_losowe))))
 
 
-
+if __name__ == '__main__':
+    print(buble_sort(buble_sort([3, 4, 2, 1])))
 
 # start = time.time()
 # print(buble_sort(hispanic_names))

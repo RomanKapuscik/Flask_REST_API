@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from algorytmy import find_name_json, find_name_list, find_name_set, buble_sort, liczby_losowe
-from algorytmy_21012024 import find_friends_json, looking_for_things_with_friends
+from algorytmy_21012024 import find_friends_json, looking_for_things_with_friends, create_password
 
 app = Flask(__name__)
 
@@ -42,11 +42,22 @@ def find_friends():
 @app.route('/find_things', methods=['GET'])
 def find_things():
     name = request.args.get('name')
-    items = request.args.get('items')
+    items = request.args.getlist('items')
 
     result = looking_for_things_with_friends(name, items)
 
     return jsonify({'result': result})
+
+@app.route('/create_password', methods=['GET'])
+def create_password_api():
+    num_of_car = int(request.args.get('number'))
+    upper = bool(request.args.get('upper'))
+    special = bool(request.args.get('special'))
+
+    result = create_password(num_of_car, upper, special)
+
+    return jsonify({'result': result})
+
 # @app.route("/dane", methods=['POST'])
 # def loadJson():
 #     content_type = request.headers.get('Content-Type')

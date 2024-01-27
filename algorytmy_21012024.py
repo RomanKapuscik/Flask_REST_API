@@ -46,10 +46,26 @@ def looking_for_things_with_friends(name: str, items: List[str]):
     return result
 
 
-print(looking_for_things_with_friends('Magda', ['kamera', 'statyw']))
+# print(looking_for_things_with_friends('Magda', ['kamera', 'statyw']))
 # print(looking_for_things_with_friends('Magda', 'statyw'))
 # print(looking_for_things_with_friends('Daniel', 'statyw'))
 
 # print(does_he_has_it('Magda', 'kamera'))
+import random
+with open('passwords.json') as f:
+    file = json.load(f)
 
 
+def create_password(num_of_car: int, upper: bool = False, special: bool = False) -> str:
+    result = ''
+    characters = file['alphabet']
+    if special:
+        characters += file['special_characters']
+    for _ in range(num_of_car):
+        result += random.choice(characters)
+    if upper:
+        return result.upper()
+    return result
+
+
+print(create_password(15, upper=True, special=True))
